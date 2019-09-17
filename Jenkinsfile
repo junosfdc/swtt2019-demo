@@ -60,5 +60,9 @@ node {
             }
         }
 
+        stage('collect results') {
+            junit keepLongStdio: true, testResults: 'tests/**/*-junit.xml'
+        }
+        
     }
 }
