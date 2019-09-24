@@ -27,7 +27,7 @@ public with sharing class MyCalendarCtrl {
             retVal = 'こんにちわ！';
         }
         else if (util.getTimeClassification() == 'Night') {
-            retVal = 'こんばんわ！今日はSWTTです。';
+            retVal = 'こんばんわ！';
         }
         return retVal;
     }
