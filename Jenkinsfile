@@ -37,7 +37,7 @@ node {
         }
         
         stage('Push To CI Scratch Org') {
-            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:push -u ciscratch"
+            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:push -f -u ciscratch"
             if (rc != 0) {
                 error 'push failed'
             }
