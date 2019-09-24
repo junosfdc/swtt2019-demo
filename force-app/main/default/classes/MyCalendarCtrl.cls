@@ -9,6 +9,8 @@ public with sharing class MyCalendarCtrl {
 
         MyCalendarCtrl ctrl = new MyCalendarCtrl();
 
+
+
         Map<String, String> m = new Map<String, String>();
         m.put('greetingMessage', ctrl.getGreetingMessage(dt));
         m.put('warekiDate', ctrl.getWarekiDate(dt));
