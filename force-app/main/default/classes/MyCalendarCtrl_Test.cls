@@ -35,7 +35,7 @@ public class MyCalendarCtrl_Test {
         
         DateTime dt = DateTime.newInstance(2019, 9, 24, 19, 0, 0);
 
-        System.assertEquals('こんばんわ！明日はSWTTです。', ctrl.getGreetingMessage(dt));
+        System.assertEquals('こんばんわ！', ctrl.getGreetingMessage(dt));
 
         Test.stopTest();
     }
