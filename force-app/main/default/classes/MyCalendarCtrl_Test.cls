@@ -9,7 +9,7 @@ public class MyCalendarCtrl_Test {
         
         DateTime dt = DateTime.newInstance(2019, 9, 24, 9, 0, 0);
 
-        System.assertEquals('おはようございます！', ctrl.getGreetingMessage(dt));
+        System.assertEquals('おはようございます！今日はSWTTです！', ctrl.getGreetingMessage(dt));
 
         Test.stopTest();
     }
