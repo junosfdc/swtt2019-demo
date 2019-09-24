@@ -62,6 +62,7 @@ node {
         }
         
         stage('Deploy to Integration Org') {
+            sh "rm -Rf metadata"
             rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:convert -d metadata"
             if (rc != 0) {
                 error 'metadata conversion failed'
