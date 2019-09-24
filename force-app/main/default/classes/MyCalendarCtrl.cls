@@ -8,9 +8,7 @@ public with sharing class MyCalendarCtrl {
         DateTime dt = DateTime.now();
 
         MyCalendarCtrl ctrl = new MyCalendarCtrl();
-
-
-
+        
         Map<String, String> m = new Map<String, String>();
         m.put('greetingMessage', ctrl.getGreetingMessage(dt));
         m.put('warekiDate', ctrl.getWarekiDate(dt));
@@ -26,8 +24,7 @@ public with sharing class MyCalendarCtrl {
             retVal = 'おはようございます！';
         }
         else if (util.getTimeClassification() == 'Afternoon') {
-            //retVal = 'こんにちわ！';
-            retVal = 'こんにちわ！今日はSWTTです！';
+            retVal = 'こんにちわ！';
         }
         else if (util.getTimeClassification() == 'Night') {
             retVal = 'こんばんわ！';
