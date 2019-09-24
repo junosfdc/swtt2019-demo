@@ -36,7 +36,7 @@ node {
             */
         }
         
-        stage('Push To Test Org') {
+        stage('Push To CI Scratch Org') {
             rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:push -u ciscratch"
             if (rc != 0) {
                 error 'push failed'
@@ -61,5 +61,16 @@ node {
             }
         }
         
+        stage('Deploy to Integration Org') {
+            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:convert -d metadata"
+            if (rc != 0) {
+                error 'metadata conversion failed'
+            }
+            rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:mdapi:deploy -d metadata/ -u joi+swtt19_ci1@salesforce.com -w 100"
+            if (rc != 0) {
+                error 'deploy integration org failed'
+            }
+        }
+
     }
 }
