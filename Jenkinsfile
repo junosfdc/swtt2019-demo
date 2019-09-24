@@ -13,7 +13,7 @@ node {
 
     def toolbelt = tool 'toolbelt'
 
-    stage('checkout source') {
+    stage('Checkout Source from Develop Branch') {
         // when running in multi-branch job, one must issue this command
         checkout scm
     }
@@ -36,7 +36,7 @@ node {
             */
         }
         
-        stage('Push To CI Scratch Org') {
+        stage('Push to Scratch Org') {
             rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:source:push -f -u ciscratch"
             if (rc != 0) {
                 error 'push failed'
@@ -50,7 +50,7 @@ node {
             */
         }
 
-        stage('Run Apex Test') {
+        stage('Run Apex Test at Scratch Org') {
             sh "mkdir -p ${RUN_ARTIFACT_DIR}"
             timeout(time: 120, unit: 'SECONDS') {
                 rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:apex:test:run --testlevel RunLocalTests --outputdir tests/xxx --resultformat tap -u ciscratch"
