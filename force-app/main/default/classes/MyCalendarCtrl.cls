@@ -23,13 +23,13 @@ public with sharing class MyCalendarCtrl {
 
         MyCalendarUtil util = new MyCalendarUtil(dt);
         if (util.getTimeClassification() == 'Morning') {
-            retVal = 'おはようございます!';
+            retVal = 'おはようございます！';
         }
         else if (util.getTimeClassification() == 'Afternoon') {
-            retVal = 'こんにちわ!';
+            retVal = 'こんにちわ！';
         }
         else if (util.getTimeClassification() == 'Night') {
-            retVal = 'こんばんわ!';
+            retVal = 'こんばんわ！';
         }
         return retVal;
     }
