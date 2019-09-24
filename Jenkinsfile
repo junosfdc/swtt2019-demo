@@ -54,14 +54,11 @@ node {
             sh "mkdir -p ${RUN_ARTIFACT_DIR}"
             timeout(time: 120, unit: 'SECONDS') {
                 rc = sh returnStatus: true, script: "${toolbelt}/sfdx force:apex:test:run --testlevel RunLocalTests --outputdir tests/xxx --resultformat tap -u ciscratch"
+                junit keepLongStdio: true, testResults: 'tests/**/*-junit.xml'
                 if (rc != 0) {
                     error 'apex test run failed'
                 }
             }
-        }
-
-        stage('collect results') {
-            junit keepLongStdio: true, testResults: 'tests/**/*-junit.xml'
         }
         
     }
