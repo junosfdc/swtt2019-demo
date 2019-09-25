@@ -1,11 +1,15 @@
 <template>
     <lightning-card title="マイカレンダー" icon-name="standard:date_time">
-        <div class="slds-text-heading_large slds-text-align_center">
-            <p>{greetingMessage}</p>
-        </div>
-        <br/>
-        <div class="slds-text-heading_medium slds-text-align_center">
-            <p>{warekiDate}</p>
+        <div class="slds-text-align_center">
+            <div class="slds-text-heading_large ">
+                <p>{greetingMessage}</p>
+            </div>
+            <br/>
+            <img src={astro} />
+            <br/>
+            <div class="slds-text-heading_medium">
+                <p>{warekiDate}</p>
+            </div>
         </div>
     </lightning-card>
 </template>
