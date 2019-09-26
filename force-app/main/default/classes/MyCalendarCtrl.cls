@@ -21,8 +21,8 @@ public with sharing class MyCalendarCtrl {
 
         MyCalendarUtil util = new MyCalendarUtil(dt);
         if (util.getTimeClassification() == 'Morning') {
-            //retVal = 'おはようございます！';
-            retVal = 'おはようございます！SWTTにようこそ！';
+            retVal = 'おはようございます！';
+            //retVal = 'おはようございます！SWTTにようこそ！';
         }
         else if (util.getTimeClassification() == 'Afternoon') {
             retVal = 'こんにちわ！';
