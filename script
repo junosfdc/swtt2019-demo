@@ -1,0 +1,3 @@
+<script>
+window.newArrival = {"attr1": true, "attr2": false};
+</script>
